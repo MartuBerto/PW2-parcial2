@@ -4,10 +4,12 @@ require_once "componentes/conexion.php";
 
 $error = "";
 $nombre = "";
+$apellido = "";
 $email = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nombre = trim($_POST["nombre"] ?? "");
+    $apellido = trim($_POST["apellido"] ?? "");
     $email = trim($_POST["email"] ?? "");
     $password = trim($_POST["password"] ?? "");
 
@@ -63,6 +65,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <form method="post" action="registro.php">
     <label for="nombre">Nombre:</label>
     <input type="text" name="nombre" id="nombre" value="<?php echo htmlspecialchars($nombre); ?>">
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" name="apellido" id="apellido" value="<?php echo htmlspecialchars($apellido); ?>">
 
     <label for="email">Email:</label>
     <input type="text" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>">
