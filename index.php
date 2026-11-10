@@ -37,7 +37,9 @@ $ordenes = [
 <?php include_once 'componentes/navbar.php' ?>
 
 <h1>TIENDA GEEK</h1>
-
+<?php if (isset($_SESSION["nombre"])) {
+   echo "<p> Bienvenido/a, " . htmlspecialchars($_SESSION["nombre"]) . "</p>";
+} ?>
 <main>
      <form method="post" action="index.php">
     <label for="orden">Ordenar por:</label>
