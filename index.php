@@ -37,9 +37,16 @@ $ordenes = [
 <?php include_once 'componentes/navbar.php' ?>
 
 <h1>TIENDA GEEK</h1>
-<?php if (isset($_SESSION["nombre"])) {
-   echo "<p> Bienvenido/a, " . htmlspecialchars($_SESSION["nombre"]) . "</p>";
-} ?>
+<?php
+if (isset($_SESSION["nombre"])) {
+    echo "<p>Bienvenido/a, " . htmlspecialchars($_SESSION["nombre"]) . "</p>";
+
+    if (isset($_SESSION["flash_exito"])) {
+        echo "<p>" . htmlspecialchars($_SESSION["flash_exito"]) . "</p>";
+        unset($_SESSION["flash_exito"]);
+    }
+}
+?>
 <main>
      <form method="post" action="index.php">
     <label for="orden">Ordenar por:</label>
