@@ -1,0 +1,42 @@
+body{
+    background-color: #000000;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+.navegador {
+    background-color: #5c5b5b;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    gap: 3rem;
+    padding: 1rem 0;
+    list-style: none;
+    justify-content: center;
+}
+
+.navegador a {
+    color: white;
+    text-decoration: none;
+    
+}
+
+.navegador a:hover {
+    color: #00c3ff;
+}
+
+.footer{
+    background-color: #222;
+    color: #5c5b5b;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
