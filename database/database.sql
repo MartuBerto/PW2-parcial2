@@ -17,7 +17,7 @@ CREATE TABLE productos (
     precio DECIMAL(10,2) NOT NULL,
     stock INT NOT NULL DEFAULT 0,
     imagen VARCHAR(255) NOT NULL
-);
+); 
 
 
 INSERT INTO productos (nombre, categoria, plataforma, genero, precio, stock, imagen) VALUES
