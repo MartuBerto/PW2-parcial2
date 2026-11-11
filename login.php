@@ -65,6 +65,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <h1>Iniciar sesión</h1>
 
         <?php
+
+        if (($_GET["msg"] ?? "") === "sesion_cerrada") {
+            echo "<p>Sesión cerrada correctamente.</p>";
+        }
+
         if (isset($_SESSION["flash_exito"])) {
             echo "<p>" . htmlspecialchars($_SESSION["flash_exito"]) . "</p>";
             unset($_SESSION["flash_exito"]);

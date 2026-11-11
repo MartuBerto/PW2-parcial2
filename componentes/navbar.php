@@ -1,3 +1,4 @@
+<header>
 <nav class="navegador">
     <a href="index.php">Inicio</a>
 
@@ -8,3 +9,4 @@
         <a href="registro.php">Registrarse</a>
     <?php } ?>
 </nav>
+</header>

@@ -11,6 +11,7 @@ rol VARCHAR(10) NOT NULL DEFAULT 'cliente'
 CREATE TABLE productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
     categoria VARCHAR(20) NOT NULL,      
     plataforma VARCHAR(30) NOT NULL,     
     genero VARCHAR(30) NULL,            

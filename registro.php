@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST["email"] ?? "");
     $password = trim($_POST["password"] ?? "");
 
-    if (empty($nombre) || empty($email) || empty($password)) {
+    if (empty($nombre) || empty($apellido) || empty($email) || empty($password)) {
         $error = "Completá todos los campos.";
     } else {
      
@@ -31,9 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
           
             $rol = "cliente";
-            $sql = "INSERT INTO usuarios (nombre, email, password, rol) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO usuarios (nombre, apellido, email, password, rol) VALUES (?, ?, ?, ?, ?)";
             $stmt = mysqli_prepare($conexion, $sql);
-            mysqli_stmt_bind_param($stmt, "ssss", $nombre, $email, $password, $rol);
+            mysqli_stmt_bind_param($stmt, "sssss", $nombre, $apellido, $email, $password, $rol);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_close($stmt);
 
