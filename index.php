@@ -37,7 +37,7 @@ $ordenes = [
 <?php include_once 'componentes/navbar.php' ?>
 
 <h1>TIENDA GEEK</h1>
-
+<p class="centrado">Venta de consolas y videojuegos</p>
 <?php
 if (isset($_SESSION["nombre"])) {
     echo "<p>Bienvenido/a, " . htmlspecialchars($_SESSION["nombre"]) . "</p>";

@@ -12,16 +12,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (empty($email) || empty($password)) {
         $error = "Completá todos los campos.";
     } else {
-        $sql = "SELECT id, nombre, rol FROM usuarios WHERE email = ? AND password = ?";
+        $sql = "SELECT id, nombre, rol, password FROM usuarios WHERE email = ?";
         $stmt = mysqli_prepare($conexion, $sql);
-        mysqli_stmt_bind_param($stmt, "ss", $email, $password);
+        mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
         $resultado = mysqli_stmt_get_result($stmt);
 
-        if (mysqli_num_rows($resultado) === 1) {
-            $usuario = mysqli_fetch_assoc($resultado);
-            mysqli_stmt_close($stmt);
+        $usuario = mysqli_fetch_assoc($resultado);
+        mysqli_stmt_close($stmt);
 
+        if ($usuario && password_verify($password, $usuario["password"])) {
             session_regenerate_id(true);
             $_SESSION["usuario_id"] = $usuario["id"];
             $_SESSION["nombre"] = $usuario["nombre"];
@@ -41,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: index.php");
             exit;
         } else {
-            mysqli_stmt_close($stmt);
             $error = "Usuario o clave incorrectos.";
         }
     }
@@ -54,12 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Iniciar Sesión</title>
 </head>
-<body>
+<body class="pag-login">
     <?php include_once 'componentes/navbar.php'; ?>
     <main>
         <h1>Iniciar sesión</h1>
@@ -67,26 +67,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php
 
         if (($_GET["msg"] ?? "") === "sesion_cerrada") {
-            echo "<p>Sesión cerrada correctamente.</p>";
+            echo "<p class ='alerta-exito'>Sesión cerrada correctamente.</p>";
         }
 
         if (isset($_SESSION["flash_exito"])) {
-            echo "<p>" . htmlspecialchars($_SESSION["flash_exito"]) . "</p>";
+            echo "<p class ='alerta-exito'>" . htmlspecialchars($_SESSION["flash_exito"]) . "</p>";
             unset($_SESSION["flash_exito"]);
         }
         if ($error != "") {
-            echo "<p>" . htmlspecialchars($error) . "</p>";
+            echo "<p class ='alerta-error'>" . htmlspecialchars($error) . "</p>";
         }
         ?>
 
-        <form method="post" action="login.php">
+        <form method="post" action="login.php" class="formulario">
             <label for="email">Email:</label>
             <input type="text" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>">
 
             <label for="password">Contraseña:</label>
             <input type="password" name="password" id="password">
 
-            <label>
+            <label class="recordar">
                 <input type="checkbox" name="recordar" value="1"> Recordarme en este equipo
             </label>
 
