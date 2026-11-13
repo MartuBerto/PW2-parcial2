@@ -51,12 +51,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/registro.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Registro</title>
 </head>
-<body>
+<body class="pag-registro">
     <?php include_once 'componentes/navbar.php' ?>
     <main>
     <h1>Registrarse</h1>
@@ -65,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <p><?php echo htmlspecialchars($error); ?></p>
 <?php } ?>
 
-<form method="post" action="registro.php">
+<form method="post" action="registro.php" class="formulario">
     <label for="nombre">Nombre:</label>
     <input type="text" name="nombre" id="nombre" value="<?php echo htmlspecialchars($nombre); ?>">
 

@@ -1,0 +1,16 @@
+.pag-registro{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 22rem;
+    margin: 2rem auto;
+    padding: 4rem;
+    background-color: #1a1a1a;
+    border-radius: 0.5rem;
+}
