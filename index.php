@@ -36,6 +36,7 @@ $ordenes = [
 
 <?php include_once 'componentes/navbar.php' ?>
 
+<main>
 <h1>TIENDA GEEK</h1>
 <p class="centrado">Venta de consolas y videojuegos</p>
 <?php
@@ -48,7 +49,6 @@ if (isset($_SESSION["nombre"])) {
     }
 }
 ?>
-<main>
     <div class="centrado">
         <form method="post" action="index.php">
             <label for="orden">Ordenar por:</label>
@@ -77,7 +77,7 @@ if (isset($_SESSION["nombre"])) {
 
     while ($producto = mysqli_fetch_assoc($resultado)) {
         echo "<div class='producto'>";
-        echo "<img src='" . htmlspecialchars($producto['imagen']) . "' width='200'>";
+        echo "<img src='" . htmlspecialchars($producto['imagen']) . "' alt='" . htmlspecialchars($producto['nombre']) . "'>";
         echo "<h3>" . htmlspecialchars($producto['nombre']) . "</h3>";
         echo "<p>Plataforma: " . htmlspecialchars($producto['plataforma']) . "</p>";
         echo "<p>Precio: $" . htmlspecialchars($producto['precio']) . "</p>";
@@ -92,6 +92,7 @@ if (isset($_SESSION["nombre"])) {
     echo "</div>";
 
     mysqli_free_result($resultado);
+    mysqli_close($conexion);
     ?>
 </main> 
 

@@ -67,11 +67,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php
 
         if (($_GET["msg"] ?? "") === "sesion_cerrada") {
-            echo "<p class ='alerta-exito'>Sesión cerrada correctamente.</p>";
+            echo "<p class='alerta-exito'>Sesión cerrada correctamente.</p>";
         }
 
         if (isset($_SESSION["flash_exito"])) {
-            echo "<p class ='alerta-exito'>" . htmlspecialchars($_SESSION["flash_exito"]) . "</p>";
+            echo "<p class='alerta-exito'>" . htmlspecialchars($_SESSION["flash_exito"]) . "</p>";
             unset($_SESSION["flash_exito"]);
         }
         if ($error != "") {
@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <form method="post" action="login.php" class="formulario">
             <label for="email">Email:</label>
-            <input type="text" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>">
+            <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>">
 
             <label for="password">Contraseña:</label>
             <input type="password" name="password" id="password">

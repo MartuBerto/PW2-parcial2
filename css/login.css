@@ -15,22 +15,7 @@
     border-radius: 0.5rem;
 }
 
-.alerta-exito,
-.alerta-error{
-    max-width: 22rem;
-    margin: 1rem auto;
-    padding: 0.75rem;
-    border-radius: 0.25rem;
-    text-align: center;
-}
 
-.alerta-exito{
-     background-color: #14532d;
-}
-
-.alerta-error{
-    background-color: #7f1d1d;
-}
 
 .recordar {
     display: flex;

@@ -15,6 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (empty($nombre) || empty($apellido) || empty($email) || empty($password)) {
         $error = "Completá todos los campos.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "Ingresá un email válido.";
     } else {
      
         $sql = "SELECT id FROM usuarios WHERE email = ?";
@@ -33,7 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $rol = "cliente";
             $sql = "INSERT INTO usuarios (nombre, apellido, email, password, rol) VALUES (?, ?, ?, ?, ?)";
             $stmt = mysqli_prepare($conexion, $sql);
-            mysqli_stmt_bind_param($stmt, "sssss", $nombre, $apellido, $email, $password, $rol);
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+            mysqli_stmt_bind_param($stmt, "sssss", $nombre, $apellido, $email, $hash, $rol);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_close($stmt);
 
@@ -59,28 +62,31 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body class="pag-registro">
     <?php include_once 'componentes/navbar.php' ?>
+    
     <main>
     <h1>Registrarse</h1>
 
-<?php if ($error != "") { ?>
-    <p><?php echo htmlspecialchars($error); ?></p>
-<?php } ?>
+<?php
+    if ($error != "") {
+        echo "<p class='alerta-error'>" . htmlspecialchars($error) . "</p>";
+    }
+?>
 
 <form method="post" action="registro.php" class="formulario">
-    <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre" id="nombre" value="<?php echo htmlspecialchars($nombre); ?>">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" value="<?php echo htmlspecialchars($nombre); ?>">
 
-    <label for="apellido">Apellido:</label>
-    <input type="text" name="apellido" id="apellido" value="<?php echo htmlspecialchars($apellido); ?>">
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" id="apellido" value="<?php echo htmlspecialchars($apellido); ?>">
 
-    <label for="email">Email:</label>
-    <input type="text" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>">
 
-    <label for="password">Contraseña:</label>
-    <input type="password" name="password" id="password">
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password" id="password">
 
-    <input type="submit" value="Registrarme">
-</form>
+        <input type="submit" value="Registrarme">
+    </form>
 </main>
 
 <?php include_once 'componentes/footer.php' ?>
