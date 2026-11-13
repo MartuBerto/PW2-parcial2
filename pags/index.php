@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once 'componentes/conexion.php';
+include_once '../componentes/conexion.php';
 
 $ordenes = [
         "nombre" => "nombre ASC",
@@ -26,7 +26,7 @@ $ordenes = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@ $ordenes = [
 </head>
 <body>
 
-<?php include_once 'componentes/navbar.php' ?>
+<?php include_once '../componentes/navbar.php' ?>
 
 <main>
 <h1>TIENDA GEEK</h1>
@@ -77,7 +77,7 @@ if (isset($_SESSION["nombre"])) {
 
     while ($producto = mysqli_fetch_assoc($resultado)) {
         echo "<div class='producto'>";
-        echo "<img src='" . htmlspecialchars($producto['imagen']) . "' alt='" . htmlspecialchars($producto['nombre']) . "'>";
+        echo "<img src='../" . htmlspecialchars($producto['imagen']) . "' alt='" . htmlspecialchars($producto['nombre']) . "'>";
         echo "<h3>" . htmlspecialchars($producto['nombre']) . "</h3>";
         echo "<p>Plataforma: " . htmlspecialchars($producto['plataforma']) . "</p>";
         echo "<p>Precio: $" . htmlspecialchars($producto['precio']) . "</p>";
@@ -96,7 +96,7 @@ if (isset($_SESSION["nombre"])) {
     ?>
 </main> 
 
-<?php include_once 'componentes/footer.php' ?>
+<?php include_once '../componentes/footer.php' ?>
     
 </body>
 </html>

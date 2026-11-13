@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "componentes/conexion.php";
+require_once "../componentes/conexion.php";
 
 $error = "";
 $nombre = "";
@@ -53,15 +53,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/registro.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Registro</title>
 </head>
 <body class="pag-registro">
-    <?php include_once 'componentes/navbar.php' ?>
+    <?php include_once '../componentes/navbar.php' ?>
     
     <main>
     <h1>Registrarse</h1>
@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </form>
 </main>
 
-<?php include_once 'componentes/footer.php' ?>
+<?php include_once '../componentes/footer.php' ?>
 
 </body>
 </html>
