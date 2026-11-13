@@ -41,10 +41,10 @@ $ordenes = [
 <p class="centrado">Venta de consolas y videojuegos</p>
 <?php
 if (isset($_SESSION["nombre"])) {
-    echo "<p>Bienvenido/a, " . htmlspecialchars($_SESSION["nombre"]) . "</p>";
+    echo "<p class= 'centrado'>Bienvenido/a, " . htmlspecialchars($_SESSION["nombre"]) . "</p>";
 
     if (isset($_SESSION["flash_exito"])) {
-        echo "<p>" . htmlspecialchars($_SESSION["flash_exito"]) . "</p>";
+        echo "<p class= 'alerta-exito'>" . htmlspecialchars($_SESSION["flash_exito"]) . "</p>";
         unset($_SESSION["flash_exito"]);
     }
 }
