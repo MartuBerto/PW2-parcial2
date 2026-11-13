@@ -33,6 +33,30 @@ body{
     color: #00c3ff;
 }
 
+h1{
+    text-align: center;
+}
+
+.caja-productos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    max-width: 56.5rem;
+    margin: 0 auto;
+    padding: 1.25rem;
+
+}
+
+.producto {
+    width: 15.625rem;
+    text-align: center;
+}
+
+.centrado{
+    text-align: center;
+}
+
 .footer{
     background-color: #222;
     color: #5c5b5b;

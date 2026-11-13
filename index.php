@@ -37,6 +37,7 @@ $ordenes = [
 <?php include_once 'componentes/navbar.php' ?>
 
 <h1>TIENDA GEEK</h1>
+
 <?php
 if (isset($_SESSION["nombre"])) {
     echo "<p>Bienvenido/a, " . htmlspecialchars($_SESSION["nombre"]) . "</p>";
@@ -48,16 +49,18 @@ if (isset($_SESSION["nombre"])) {
 }
 ?>
 <main>
-     <form method="post" action="index.php">
-    <label for="orden">Ordenar por:</label>
-    <select name="orden" id="orden">
-        <option value="" disabled selected>Seleccione un orden</option>
-        <option value="nombre">Nombre</option>
-        <option value="menor_precio">Precio: menor a mayor</option>
-        <option value="mayor_precio">Precio: mayor a menor</option>
-    </select>
-    <input type="submit" value="Ordenar">
-    </form>
+    <div class="centrado">
+        <form method="post" action="index.php">
+            <label for="orden">Ordenar por:</label>
+        <select name="orden" id="orden">
+            <option value="" disabled selected>Seleccione un orden</option>
+            <option value="nombre">Nombre</option>
+            <option value="menor_precio">Precio: menor a mayor</option>
+            <option value="mayor_precio">Precio: mayor a menor</option>
+        </select>
+            <input type="submit" value="Ordenar">
+        </form>
+    </div>
     <?php
 
     if ($orden === "menor_precio") {
@@ -69,6 +72,8 @@ if (isset($_SESSION["nombre"])) {
     }
 
       $resultado = mysqli_query($conexion, $sql);
+
+      echo "<div class= 'caja-productos'>";
 
     while ($producto = mysqli_fetch_assoc($resultado)) {
         echo "<div class='producto'>";
@@ -83,6 +88,8 @@ if (isset($_SESSION["nombre"])) {
 
         echo "</div>";
     }
+
+    echo "</div>";
 
     mysqli_free_result($resultado);
     ?>
