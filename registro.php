@@ -81,5 +81,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <input type="submit" value="Registrarme">
 </form>
 </main>
+
+<?php include_once 'componentes/footer.php' ?>
+
 </body>
 </html>
