@@ -1,3 +1,11 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+
 .lista-carrito {
     display: flex;
     flex-direction: column;

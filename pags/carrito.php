@@ -69,6 +69,8 @@ $total = 0;
     <a class="boton-volver" href="tienda.php">← Volver a la tienda</a>
 
     </main>
+
+    <?php include_once '../componentes/footer.php' ?>
     
 </body>
 </html>

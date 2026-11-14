@@ -12,3 +12,32 @@
  
 }
 
+.beneficios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 56.5rem;
+    margin: 2rem auto;
+    padding: 0 1.25rem;
+}
+
+.beneficio {
+    width: 14rem;
+    padding: 1.5rem;
+    background-color: #1a1a1a;
+    border: 2px solid #2a1458;
+    border-radius: 0.75rem;
+    text-align: center;
+    transition: 0.2s ease-in-out;
+}
+
+
+.beneficio h3 {
+    margin-top: 0;
+    color: #00c3ff;
+}
+
+.beneficio:hover {
+    border-color: #00c3ff;
+}

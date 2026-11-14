@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <label for="password">Contraseña:</label>
         <input type="password" name="password" id="password">
 
-        <input type="submit" value="Registrarme">
+        <input type="submit" value="Registrarme" class="boton-registrarme">
     </form>
 </main>
 

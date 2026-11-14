@@ -91,8 +91,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input type="checkbox" name="recordar" value="1"> Recordarme en este equipo
             </label>
 
-            <input type="submit" value="Ingresar">
+            <input type="submit" value="Ingresar" class="link-registro">
         </form>
+         <p class="centrado">¿Todavía no estás registrado? <a href="registro.php" class="link-registro">Registrate aquí</a></p>
     </main>
 
     <?php include_once '../componentes/footer.php' ?>
