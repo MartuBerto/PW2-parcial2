@@ -42,3 +42,11 @@ INSERT INTO productos (nombre, categoria, plataforma, genero, precio, stock, ima
 ('Resident Evil 4',          'juego', 'Xbox', 'Terror',   50000.00, 14, 'img/resident-evil-4.jpg'),
 ('Xbox Series X',               'consola', 'Xbox', NULL,   1100000.00, 4, 'img/xbox-series-x.jpg'),
 ('Final Fantasy VII Rebirth',   'juego',   'PS5',  'Rol',    65000.00, 9, 'img/final-fantasy-vii-rebirth.jpg');
+
+
+-- Usuarios de prueba (contraseñas: Lucia1234, Mati1234, Sofi1234, Admin1234)
+INSERT INTO usuarios (nombre, apellido, email, password, rol) VALUES
+('Lucía',  'Fernández', 'lucia@mail.com', '$2y$10$JrmCtcmlABhWyWLi71zrP.0JbhdWj/mr9Fh31MhoV276hajb77vsu', 'cliente'),
+('Matías', 'Gómez',     'mati@mail.com',  '$2y$10$Cf9WPMdkTjp5gk0NgUuCneo8ItQYX1DPfB1W9aGh0EbwAnfGr2sYW', 'cliente'),
+('Sofía',  'Ramírez',   'sofi@mail.com',  '$2y$10$sTSaeV78ZKNvXq9O9FLf5OQaPaSr0l87Fdk/FMCdc/lL9hyCaHFci', 'cliente'),
+('Admin',  'Tienda',    'admin@mail.com', '$2y$10$hWGhVgE2.rYjQdcU62uCoOJgVij5NWB5QutBOWN0pKnck1fyZyAmi', 'admin');

@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             }
 
             $_SESSION["flash_exito"] = "Sesión iniciada correctamente.";
-            header("Location: index.php");
+            header("Location: tienda.php");
             exit;
         } else {
             $error = "Usuario o clave incorrectos.";
@@ -92,8 +92,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </label>
 
             <input type="submit" value="Ingresar" class="link-registro">
+            
         </form>
-         <p class="centrado">¿Todavía no estás registrado? <a href="registro.php" class="link-registro">Registrate aquí</a></p>
+            <p class="centrado">¿Todavía no estás registrado? <a href="registro.php" class="boton-registro">Registrate aquí</a></p>
     </main>
 
     <?php include_once '../componentes/footer.php' ?>
