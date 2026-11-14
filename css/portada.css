@@ -1,0 +1,14 @@
+.pag-portada{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.imagen{
+  height: 25rem;
+  width: 40vw;
+  border-radius: 20px; 
+  align-items: center;
+ 
+}
+
