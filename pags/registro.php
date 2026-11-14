@@ -73,6 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 ?>
 
+<h2 class="centrado">Ingrese sus datos</h2>
+
 <form method="post" action="registro.php" class="formulario">
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" id="nombre" value="<?php echo htmlspecialchars($nombre); ?>">

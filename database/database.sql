@@ -39,5 +39,6 @@ INSERT INTO productos (nombre, categoria, plataforma, genero, precio, stock, ima
 ('Astro Bot',                        'juego',   'PS5',  'Aventura',    62000.00, 9,  'img/astro-bot.jpg'),
 ('Diablo IV',                'juego', 'Xbox', 'Rol',      60000.00, 14, 'img/diablo-4.jpg'),
 ('Cyberpunk 2077',        'juego', 'Xbox', 'Rol',      70000.00, 14, 'img/cyberpunk-2077.jpg'),
-('Resident Evil 4',          'juego', 'Xbox', 'Terror',   50000.00, 14, 'img/resident-evil-4.jpg');
-
+('Resident Evil 4',          'juego', 'Xbox', 'Terror',   50000.00, 14, 'img/resident-evil-4.jpg'),
+('Xbox Series X',               'consola', 'Xbox', NULL,   1100000.00, 4, 'img/xbox-series-x.jpg'),
+('Final Fantasy VII Rebirth',   'juego',   'PS5',  'Rol',    65000.00, 9, 'img/final-fantasy-vii-rebirth.jpg');
