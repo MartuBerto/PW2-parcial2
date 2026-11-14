@@ -49,6 +49,24 @@ h1{
     text-align: center;
 }
 
+#ordenar{
+    display: block;
+    width: fit-content;
+    margin: 1.5rem auto;
+    padding: 0.6rem 1.25rem;
+    background-color: #2a1458;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+
+}
+
 .caja-productos{
     display: flex;
     flex-wrap: wrap;
@@ -78,6 +96,23 @@ h1{
 
 }
 
+.agregar-prod{
+    display: block;
+    width: fit-content;
+    margin: 1.5rem 0 1.5rem 1.5rem;
+    padding: 0.6rem 1.25rem;
+    background-color: #2a1458;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+}
+
 .centrado{
     text-align: center;
 }
@@ -98,6 +133,7 @@ h1{
 .alerta-error{
     background-color: #7f1d1d;
 }
+
 
 .footer{
     background-color: #2a1458;

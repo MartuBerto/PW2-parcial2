@@ -1,14 +1,14 @@
 <?php
 session_start();
-require_once "componentes/conexion.php";
+require_once "../componentes/conexion.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/portada.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portada.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@ require_once "componentes/conexion.php";
 </head>
 <body class="pag-portada">
 
-    <?php include_once 'componentes/navbar.php'; ?>
+    <?php include_once '../componentes/navbar.php'; ?>
 
     <main>
         <h1 class="centrado">TIENDA GEEK</h1>
@@ -28,7 +28,7 @@ require_once "componentes/conexion.php";
         </section>
     </main>
 
-    <?php include_once 'componentes/footer.php'; ?>
+    <?php include_once '../componentes/footer.php'; ?>
     
 </body>
 </html>

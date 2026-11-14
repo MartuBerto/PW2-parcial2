@@ -5,7 +5,7 @@ include_once '../componentes/conexion.php';
 if (isset($_POST['agregar'])) {
     $id = (int)$_POST['agregar'];
 
-    $sql = "SELECT id, nombre, precio, stock FROM productos WHERE id = ?";
+    $sql = "SELECT id, nombre, precio, stock, imagen FROM productos WHERE id = ?";
     $stmt = mysqli_prepare($conexion, $sql);
     mysqli_stmt_bind_param($stmt, "i", $id);
     mysqli_stmt_execute($stmt);
@@ -22,12 +22,13 @@ if (isset($_POST['agregar'])) {
             $_SESSION['carrito'][$id] = [
                 'nombre' => $item['nombre'],
                 'precio' => $item['precio'],
+                'imagen' => $item['imagen'],
                 'cantidad' => 1
             ];
         }
     }
 
-    header("Location: index.php");
+    header("Location: tienda.php");
     exit;
 }
 
@@ -81,7 +82,7 @@ if (isset($_SESSION["nombre"])) {
 }
 ?>
     <div class="centrado">
-        <form method="post" action="index.php">
+        <form method="post" action="tienda.php">
             <label for="orden">Ordenar por:</label>
         <select name="orden" id="orden">
             <option value="" disabled selected>Seleccione un orden</option>
@@ -89,7 +90,7 @@ if (isset($_SESSION["nombre"])) {
             <option value="menor_precio">Precio: menor a mayor</option>
             <option value="mayor_precio">Precio: mayor a menor</option>
         </select>
-            <input type="submit" value="Ordenar">
+            <input type="submit" value="Ordenar" id="ordenar">
         </form>
     </div>
     <?php
@@ -116,9 +117,9 @@ if (isset($_SESSION["nombre"])) {
         if ($producto['stock'] == 0) {
             echo "<p>Sin stock</p>";
         } else {
-            echo "<form method='post' action='index.php'>";
+            echo "<form method='post' action='tienda.php'>";
             echo "<input type='hidden' name='agregar' value='" . $producto['id'] . "'>";
-            echo "<input type='submit' value='Agregar al carrito'>";
+            echo "<input type='submit' value='Agregar al carrito' class='agregar-prod'>";
             echo "</form>";
         }
 
