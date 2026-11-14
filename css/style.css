@@ -47,6 +47,7 @@ body{
 
 h1{
     text-align: center;
+    color: #00c3ff;
 }
 
 #ordenar{
@@ -91,8 +92,12 @@ h1{
     transition: 0.2s ease-in-out;
 }
 
+.producto h3 {
+    color: #00c3ff;
+}
+
 .producto:hover{
-     scale: 1.1
+     border-color: #00c3ff;
 
 }
 

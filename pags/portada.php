@@ -20,10 +20,13 @@ require_once "../componentes/conexion.php";
 
     <main>
         <h1 class="centrado">TIENDA GEEK</h1>
+        <h2 class="centrado">Venta de consolas y videojuegos</h2>
 
         <section class="centrado">
-            <p>El mejor lugar para encontrar consolas, videojuegos y lanzamientos de última generación.</p>
-            <p>En Tienda Geek sabemos que cada partida es única. Por eso, te acercamos el catálogo más completo para PlayStation, Xbox, Nintendo y PC. Ya sea que prefieras la acción, explorar mundos abiertos o revivir los clásicos de siempre, acá vas a encontrar todo lo necesario para tu próxima aventura. Descubrí tu próximo juego favorito.</p>
+            <div class="contenedor">
+                <p class="verde">El mejor lugar para encontrar consolas, videojuegos y lanzamientos de última generación.</p>
+                <p>En Tienda Geek sabemos que cada partida es única. Por eso, te acercamos el catálogo más completo para PlayStation, Xbox, Nintendo y PC. Ya sea que prefieras la acción, explorar mundos abiertos o revivir los clásicos de siempre, acá vas a encontrar todo lo necesario para tu próxima aventura. Descubrí tu próximo juego favorito.</p>
+            </div>
         </section>
         <section class="beneficios">
             <div class="beneficio">

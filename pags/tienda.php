@@ -70,7 +70,7 @@ $ordenes = [
 
 <main>
 <h1>TIENDA GEEK</h1>
-<p class="centrado">Venta de consolas y videojuegos</p>
+<h2 class="centrado">Venta de consolas y videojuegos</h2>
 <?php
 if (isset($_SESSION["nombre"])) {
     echo "<p class= 'centrado'>Bienvenido/a, " . htmlspecialchars($_SESSION["nombre"]) . "</p>";
@@ -115,7 +115,7 @@ if (isset($_SESSION["nombre"])) {
         echo "<p>Precio: $" . htmlspecialchars($producto['precio']) . "</p>";
 
         if ($producto['stock'] == 0) {
-            echo "<p>Sin stock</p>";
+            echo "<p class='alerta-error'>Sin stock</p>";
         } else {
             echo "<form method='post' action='tienda.php'>";
             echo "<input type='hidden' name='agregar' value='" . $producto['id'] . "'>";
