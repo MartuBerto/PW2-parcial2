@@ -25,7 +25,7 @@ require_once "../componentes/conexion.php";
         <section class="centrado">
             <div class="contenedor">
                 <p class="verde">El mejor lugar para encontrar consolas, videojuegos y lanzamientos de última generación.</p>
-                <p>En Tienda Geek sabemos que cada partida es única. Por eso, te acercamos el catálogo más completo para PlayStation, Xbox, Nintendo y PC. Ya sea que prefieras la acción, explorar mundos abiertos o revivir los clásicos de siempre, acá vas a encontrar todo lo necesario para tu próxima aventura. Descubrí tu próximo juego favorito.</p>
+                <p>En Tienda Geek sabemos que cada partida es única. Por eso, te acercamos el catálogo más completo para PlayStation y Xbox. Ya sea que prefieras la acción, explorar mundos abiertos o revivir los clásicos de siempre, acá vas a encontrar todo lo necesario para tu próxima aventura. Descubrí tu próximo juego favorito.</p>
             </div>
         </section>
         <section class="beneficios">
