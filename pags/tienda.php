@@ -2,6 +2,35 @@
 session_start();
 include_once '../componentes/conexion.php';
 
+if (isset($_POST['agregar'])) {
+    $id = (int)$_POST['agregar'];
+
+    $sql = "SELECT id, nombre, precio, stock FROM productos WHERE id = ?";
+    $stmt = mysqli_prepare($conexion, $sql);
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+    $resultado = mysqli_stmt_get_result($stmt);
+    $item = mysqli_fetch_assoc($resultado);
+    mysqli_stmt_close($stmt);
+
+    if ($item && $item['stock'] > 0) {
+        if (isset($_SESSION['carrito'][$id])) {
+            if ($_SESSION['carrito'][$id]['cantidad'] < $item['stock']) {
+                $_SESSION['carrito'][$id]['cantidad']++;
+            }
+        } else {
+            $_SESSION['carrito'][$id] = [
+                'nombre' => $item['nombre'],
+                'precio' => $item['precio'],
+                'cantidad' => 1
+            ];
+        }
+    }
+
+    header("Location: index.php");
+    exit;
+}
+
 $ordenes = [
         "nombre" => "nombre ASC",
         "menor_precio" => "precio ASC",
@@ -86,6 +115,11 @@ if (isset($_SESSION["nombre"])) {
 
         if ($producto['stock'] == 0) {
             echo "<p>Sin stock</p>";
+        } else {
+            echo "<form method='post' action='index.php'>";
+            echo "<input type='hidden' name='agregar' value='" . $producto['id'] . "'>";
+            echo "<input type='submit' value='Agregar al carrito'>";
+            echo "</form>";
         }
 
         echo "</div>";

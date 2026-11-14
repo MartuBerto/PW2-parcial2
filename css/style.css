@@ -41,6 +41,10 @@ body{
     border-radius: 5px;
 }
 
+.link-carrito {
+    margin-left: auto;
+}
+
 h1{
     text-align: center;
 }
